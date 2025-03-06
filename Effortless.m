@@ -15,8 +15,8 @@ RunEffortlessIndependentFF::usage="RunEffortlessIndependentFF[SqrtList,EvenAlpha
 FindOddLetters::usage = "FindOddLetters[CurrentSqrt,AllowedEvenAlpha,SqrtRepl,vars] - finds all odd letters constructed using the squareroot Sqrt which factorize in terms of the even alphabet EvenAlpha."
 AllowedEvenLetters::usage = "AllowedEvenLetters[CurrentSqrt,EvenAlpha,SqrtRepl,vars] - finds all even letters in EvenAlpha which can possibly show up in a factorization of an odd letter involving Sqrt."
 (*SortAlphabet::usage = "sorts the letters in EvenAlpha with respect to their polynomial order in the variables vars and returns the sorted alphabet as well as a map to the original alphabet."*)
-SortAlphabetSublist::usage = "SortAlphabetSublist[EvenAlpha,vars] - sorts the letters in EvenAlpha with respect to their polynomial order in the variables vars and returns the sorted alphabet split in sublists corresponding to the polynomial order."
-AlphabetPolynomialOrderKey::usage = "AlphabetPolynomialOrderKey[EvenAlpha,vars] - creates a key assigning every alphabet letter to its polynomial order in the variables vars."
+(*SortAlphabetSublist::usage = "SortAlphabetSublist[EvenAlpha,vars] - sorts the letters in EvenAlpha with respect to their polynomial order in the variables vars and returns the sorted alphabet split in sublists corresponding to the polynomial order."*)
+(*AlphabetPolynomialOrderKey::usage = "AlphabetPolynomialOrderKey[EvenAlpha,vars] - creates a key assigning every alphabet letter to its polynomial order in the variables vars."*)
 ConstructProducts::usage = "ConstructProducts[CurrentSqrt,AllowedEvenAlpha,SqrtRepl,vars] - constructs all possible products of the right polynomial order for the square root Sqrt from the even subalphabet AllowedEvenAlpha."
 AllowedProductQ::usage = "AllowedProductQ[CurrentSqrt,Prod,EvenAlpha,SqrtRepl,vars] - checks whether adding the abstract letter product Prod turns CurrentSqrt into a perfect square once EvenAlpha has been substituted."
 AllowedLetterQ::usage = "AllowedLetterQ[SqrtArgument,EvenLetter,vars] - checks whether the letter EvenLetter is a letter that can possibly show up in the factorization of an odd letter involving SqrtArgument."
@@ -248,7 +248,7 @@ DecomposeInAlphabetFF[AlphabetRepl_,LetterToDecompose_,SqrtRepl_,vars_,OptionsPa
 
 FactorOdd[OddLetter_,SqrtRepl_]:=
 	Module[{expLett=Exp[OddLetter]},
-	Numerator[expLett]Denominator[expLett]/.SqrtRepl//Expand//Factor
+	Numerator[expLett]Denominator[expLett]//.SqrtRepl//Expand//Factor
 	]
 
 
