@@ -15,3 +15,6 @@ For all functions using FiniteFlow, there exists a corresponding Mathematica-onl
 The usage of the package is demonstrated in [Examples/Examples.nb](Examples/Examples.nb). 
 
 
+## Citation
+
+If you use Effortless, please provide a link to this repository. 
